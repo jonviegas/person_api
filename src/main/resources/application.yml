@@ -1,0 +1,13 @@
+server:
+  error:
+    include-message: ALWAYS
+    include-stacktrace: ON_PARAM
+    include-binding-errors: ALWAYS
+    include-exception: false
+spring:
+  h2:
+    console:
+      enabled: false
+springdoc:
+  api-docs:
+    path: persons/v3/api-docs
