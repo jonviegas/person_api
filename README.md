@@ -13,7 +13,7 @@ The project is also hosted on *Heroku*, [click here](https://person-system-api.h
 - - -
 ## :green_book: Documentation
 
-To check the complete documentation made with *Swagger*, access [here](https://person-system-api.herokuapp.com/swagger-ui.html).
+[Click here](https://person-system-api.herokuapp.com/swagger-ui.html) to access the complete documentation made with *swagger*.
 - - -
 ## :computer: Usage
 
