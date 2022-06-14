@@ -36,14 +36,13 @@ public class PersonServiceTest {
     @DisplayName("Should return all registered persons")
     void shouldReturnAllRegisteredPersons() {
         // given
-        final Pageable page = PersonPagination.getPage(1, "asc", "id");
         final Page<Person> personsPage = new PageImpl<>(Arrays.asList(PERSON_MAPPER.toModel(EXPECTED_PERSON_DTO),
-                PERSON_MAPPER.toModel(ANOTHER_PERSON_DTO)), page, 2);
+                PERSON_MAPPER.toModel(ANOTHER_PERSON_DTO)), DEFAULT_PAGEABLE, 2);
         final Page<PersonDTO> expectedPersonsDTOPage = personsPage.map(PERSON_MAPPER::toDTO);
 
         // when
-        when(personRepository.findAll(page)).thenReturn(personsPage);
-        final Page<PersonDTO> returnedPersonsDTOPage = personService.findAll(page);
+        when(personRepository.findAll(DEFAULT_PAGEABLE)).thenReturn(personsPage);
+        final Page<PersonDTO> returnedPersonsDTOPage = personService.findAll(DEFAULT_PAGEABLE);
 
         // then
         assertThat(returnedPersonsDTOPage).isNotEmpty();

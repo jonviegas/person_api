@@ -28,9 +28,10 @@ public class PersonController {
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Finds all registered people")
     public Page<PersonDTO> findAll(@RequestParam(name = "page", defaultValue = "1") int pageNumber,
+                                   @RequestParam(name = "limit", defaultValue = "10") int limit,
                                    @RequestParam(name = "direction", defaultValue = "asc") String direction,
                                    @RequestParam(name = "orderBy", defaultValue = "id") String criteria) {
-        final Pageable page = PersonPagination.getPage(pageNumber, direction, criteria);
+        final Pageable page = PersonPagination.getPage(pageNumber, limit, direction, criteria);
         final Page<PersonDTO> personsDTO = personService.findAll(page);
         PersonHateoas.addLinkToItself(personsDTO);
         return personsDTO;

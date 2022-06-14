@@ -15,7 +15,7 @@ public class PersonHateoas {
     }
 
     public static void addLinkToAll(PersonDTO personDTO) {
-        personDTO.add(linkTo(methodOn(PersonController.class).findAll(1, "asc", "id")).withRel("Persons list"));
+        personDTO.add(linkTo(methodOn(PersonController.class).findAll(1, 10, "asc", "id")).withRel("Persons list"));
     }
 
 }

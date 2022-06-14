@@ -21,7 +21,7 @@ public class TestConstants {
     public static long INVALID_PERSON_ID = 5L;
     public static String VALID_PERSON_NAME = EXPECTED_PERSON_DTO.getFirstName();
     public static String INVALID_PERSON_NAME = "Yoda";
-    public static Pageable DEFAULT_PAGEABLE = PersonPagination.getPage(1, "asc", "id");
+    public static Pageable DEFAULT_PAGEABLE = PersonPagination.getPage(1, 10, "asc", "id");
     public static Page<PersonDTO> PAGE_PERSON_DTO = new PageImpl<>(Arrays.asList(EXPECTED_PERSON_DTO, ANOTHER_PERSON_DTO), DEFAULT_PAGEABLE, 2);
     public static PersonMapper PERSON_MAPPER = PersonMapper.INSTANCE;
     public static Optional<Person> EXPECTED_OPTIONAL_PERSON = Optional.of(PERSON_MAPPER.toModel(EXPECTED_PERSON_DTO));

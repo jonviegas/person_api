@@ -17,15 +17,20 @@ public class PersonPagination {
     private static final String DEFAULT_CRITERION = "id";
     private static final List<String> SORT_CRITERIA = List.of("id", "firstName", "birthDate");
 
-    public static Pageable getPage(int pageNumber, String orderBy, String criteria) {
+    public static Pageable getPage(int pageNumber, int limit, String orderBy, String criteria) {
         pageNumber = validatePageNumber(pageNumber);
         criteria = validateCriteria(criteria);
+        limit = validateLimit(limit);
         final Direction direction = validateDirection(orderBy);
-        return PageRequest.of(pageNumber, DEFAULT_LIMIT, Sort.by(direction, criteria));
+        return PageRequest.of(pageNumber, limit, Sort.by(direction, criteria));
     }
 
     private static int validatePageNumber(int pageNumber) {
         return pageNumber <= DEFAULT_PAGE_NUMBER ? DEFAULT_PAGE_NUMBER : --pageNumber;
+    }
+
+    private static int validateLimit(int limit) {
+        return limit > 30 || limit < 1 ? DEFAULT_LIMIT : limit;
     }
 
     private static String validateCriteria(String criteria) {
