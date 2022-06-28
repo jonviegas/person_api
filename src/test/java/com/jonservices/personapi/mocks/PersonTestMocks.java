@@ -1,4 +1,4 @@
-package com.jonservices.personapi.utils;
+package com.jonservices.personapi.mocks;
 
 import com.jonservices.personapi.builder.PersonDTOBuilder;
 import com.jonservices.personapi.data.dto.PersonDTO;
@@ -12,8 +12,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.Arrays;
 import java.util.Optional;
 
-public class TestConstants {
-
+public class PersonTestMocks {
     public static String PERSON_API_URL_PATH = "/persons";
     public static PersonDTO EXPECTED_PERSON_DTO = PersonDTOBuilder.builder().build().toPersonDTO();
     public static PersonDTO ANOTHER_PERSON_DTO = PersonDTOBuilder.builder().build().aDifferentOne();

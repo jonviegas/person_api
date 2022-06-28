@@ -12,7 +12,7 @@ import java.util.List;
 public class PersonPagination {
 
     private static final int DEFAULT_PAGE_NUMBER = 0;
-    private static final int DEFAULT_LIMIT = 10;
+    private static final int DEFAULT_LIMIT = 20;
     private static final Direction DEFAULT_DIRECTION = Direction.ASC;
     private static final String DEFAULT_CRITERION = "id";
     private static final List<String> SORT_CRITERIA = List.of("id", "firstName", "birthDate");

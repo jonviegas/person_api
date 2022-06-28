@@ -5,7 +5,6 @@ import com.jonservices.personapi.data.dto.MessageResponseDTO;
 import com.jonservices.personapi.data.dto.PersonDTO;
 import com.jonservices.personapi.data.model.Person;
 import com.jonservices.personapi.exception.PersonNotFoundException;
-import com.jonservices.personapi.pagination.PersonPagination;
 import com.jonservices.personapi.repository.PersonRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,11 +14,10 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 
 import java.util.*;
 
-import static com.jonservices.personapi.utils.TestConstants.*;
+import static com.jonservices.personapi.mocks.PersonTestMocks.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
