@@ -3,7 +3,6 @@ package com.jonservices.personapi.controller;
 import com.jonservices.personapi.data.dto.MessageResponseDTO;
 import com.jonservices.personapi.data.dto.PersonDTO;
 import com.jonservices.personapi.hateoas.PersonHateoas;
-import com.jonservices.personapi.pagination.PersonPagination;
 import com.jonservices.personapi.service.PersonService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -27,11 +26,7 @@ public class PersonController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Finds all registered people")
-    public Page<PersonDTO> findAll(@RequestParam(name = "page", defaultValue = "1") int pageNumber,
-                                   @RequestParam(name = "limit", defaultValue = "10") int limit,
-                                   @RequestParam(name = "direction", defaultValue = "asc") String direction,
-                                   @RequestParam(name = "orderBy", defaultValue = "id") String criteria) {
-        final Pageable page = PersonPagination.getPage(pageNumber, limit, direction, criteria);
+    public Page<PersonDTO> findAll(Pageable page) {
         final Page<PersonDTO> personsDTO = personService.findAll(page);
         PersonHateoas.addLinkToItself(personsDTO);
         return personsDTO;

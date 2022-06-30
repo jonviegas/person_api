@@ -2,7 +2,7 @@
 - - -
 
 ## :book: Introduction
-This **REST API** provides a small system for managing people, offering the functionality to register a person by their first name, last name, CPF (Brazillian individual registry identification), date of birth, and personal phone numbers. In addition, it is also possible to query a record or list all records according to a sorting criterion.
+This **REST API** provides a small system for managing people, offering the functionality to register a person by their first name, last name, CPF (Brazilian individual registry identification), date of birth, and personal phone numbers. In addition, it is also possible to query a record or list all records according to a sorting criterion.
 
 The **API** was developed in *Java* with *Spring Boot*.
 
@@ -21,11 +21,11 @@ The project is also hosted on *Heroku*, [click here](https://person-system-api.h
     ```/persons```
     Finds all registered people.
     \
-    ```/persons?orderBy=name```
+    ```/persons?sort=firstName```
     Returns all records ordered by name.
     \
-    ```/persons?orderBy=birthDate```
-    Returns all records ordered by birth date.
+    ```/persons?sort=birthDate```
+    Returns all records ordered by birthdate.
     \
     ```/persons/{id}```
     Returns a person, if exists, by its id.
